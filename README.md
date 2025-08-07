@@ -6,15 +6,19 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ## 🧱 Componentes principales
 
-### 1. Network Load Balancer
-- Escucha en puertos 3724 TCP (realmd), 8085 TCP (mangosd), 443 WEB (HTTPS)
-- Redirige tráfico a instancia backend sin IP pública
+### 2. Cloudfare DNS y Web proxy
+- Se realiza traducion de dominio realm1.wow-la.org hacia la IP publica del NLB, sin proxy
+- Se realiza traducion de dominio www.wow-la.org hacia la IP publica del NLB, con proxy
 
-### 2. Subredes
+### 2. Network Load Balancer
+- Escucha en puertos 3724 TCP (realmd), 8085 TCP (mangosd), 443 WEB (HTTPS)
+- Redirige tráfico a instancia backend sin IP pública, manteniendo la IPP de origen
+
+### 3. Subredes
 - **Pública**: Load balancer + Internet Gateway
 - **Privada**: Nodo de aplicación + NAT Gateway
 
-### 3. Nodo de aplicación (Compute)
+### 4. Nodo de aplicación (Compute)
 - Instancia `VM.Standard.A1.Flex` sin IP pública
 - Sistema operativo: Ubuntu 22.04
 - Corre `LXD` como sistema de contenedores ligeros
@@ -24,7 +28,7 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
   `Memory (GB)`: 24
   `Local disk (GB)`: 200, Block storage only
 
-### 4. Contenedores LXC
+### 5. Contenedores LXC
 - `realmd`: Servidor de autenticación
 - `mangosd`: Servidor del mundo (game server)
 - `mysql`: Base de datos MariaDB con acceso local
@@ -39,7 +43,7 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ## 🔐 Seguridad
 - No se exponen IPs públicas dentro del nodo de computo, la IP publica esta en el NLB y NATGW, por lo que se hereda protecciones de estos servicios de oracle.
-- Acceso al computo solo desde la consola Cloud Shell
+- Acceso al computo solo desde la consola Cloud Shell via Internet, y directamente a la VCN desde la red on premises mediate una VPN de sitio a sitio
 - Firewalls estrictos configurados en VCN y LXD
 
 ## 📊 Diagrama
