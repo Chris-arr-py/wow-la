@@ -6,7 +6,7 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ## 🧱 Componentes principales
 
-### 2. Cloudfare DNS y Web proxy
+### 1. Cloudfare DNS y Web proxy
 - Se realiza traducion de dominio realm1.wow-la.org hacia la IP publica del NLB, sin proxy
 - Se realiza traducion de dominio www.wow-la.org hacia la IP publica del NLB, con proxy
 
