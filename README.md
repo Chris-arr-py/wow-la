@@ -44,4 +44,4 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ## 📊 Diagrama
 
-![Diagrama de Arquitectura](./infraestructura-vmangos.png)
+![Diagrama de Arquitectura](./Diagrams/Diagrama_Vmangos_Oracle.png)
