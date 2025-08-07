@@ -52,5 +52,5 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ## 📊 Estado del servidor (snapshot)
 
-![Ver snapshot en Grafana](https://wowla.grafana.net/dashboard/snapshot/f0CBU2ponxdKBuvtuyhoZY3QjiG9zLqz)
+[Ver snapshot en Grafana](https://wowla.grafana.net/dashboard/snapshot/f0CBU2ponxdKBuvtuyhoZY3QjiG9zLqz)
 
