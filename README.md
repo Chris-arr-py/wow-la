@@ -50,10 +50,7 @@ Este repositorio documenta la infraestructura de un servidor vMaNGOS Classic (1.
 
 ![Diagrama de Arquitectura](./Diagrams/Diagrama_Vmangos_Oracle.png)
 
-## 📊 Monitoreo en tiempo real
+## 📊 Estado del servidor (snapshot)
 
-Puedes visualizar el estado actual de la infraestructura accediendo al dashboard de Grafana:
+[![Ver snapshot en Grafana](docs/assets/grafana-snapshot.png)](https://wowla.grafana.net/dashboard/snapshot/f0CBU2ponxdKBuvtuyhoZY3QjiG9zLqz)
 
-🔗 [Dashboard público en Grafana]([https://grafana.tudominio.com/d/abcd1234/vmangos-monitoring?orgId=1&refresh=30s](https://wowla.grafana.net/dashboard/snapshot/f0CBU2ponxdKBuvtuyhoZY3QjiG9zLqz))
-
-> Este dashboard muestra CPU, RAM, y uso de red de los contenedores LXC que forman parte de la arquitectura vMaNGOS.
